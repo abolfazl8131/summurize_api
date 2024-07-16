@@ -10,9 +10,8 @@ class Body(BaseModel):
     text: str
     
 
-
-@app.post("/sum/")
-async def summurize(body:Body):
+@app.post("/sumurrize_the_text/")
+async def summurize_text(body:Body):
     return {"message": summurize_the_text(body.text)}
 
 
