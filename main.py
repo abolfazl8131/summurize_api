@@ -7,11 +7,12 @@ from fastapi import FastAPI
 app = FastAPI()
 
 class Body(BaseModel):
-    text: str
+    text:str
+    paragraphs:int
     
 
 @app.post("/sumurrize_the_text/")
 async def summurize_text(body:Body):
-    return {"message": summurize_the_text(body.text)}
+    return {"message": summurize_the_text(body.text, body.paragraphs)}
 
 
